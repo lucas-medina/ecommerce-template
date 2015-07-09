@@ -3,7 +3,7 @@ Template de E-commerce.
 
 Este projeto apresenta um template base de E-commerce para avaliação.
 
-# Estrutura de arquivos
+## Estrutura de arquivos
 As pastas são organizadas da seguinte forma:
 
 src/ - Pasta de arquivos de origem;
