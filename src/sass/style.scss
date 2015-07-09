@@ -1,1 +1,337 @@
-/* testing */
+// Importing fonts
+@import 'fonts';
+
+// Mixin para hovers semelhantes no CSS
+@mixin magic_hover($color) {
+	background-color: $color;
+	box-shadow: 0px 3px 0px darken($color, 10%);
+}
+
+// Gera posicionamento de ícones
+@mixin icon_profite($width, $height, $x, $y) {
+	width: $width;
+	height: $height;
+	background-position: $x $y;
+}
+@mixin icon_profite_rating($x, $y){
+	background-position: $x $y;
+}
+
+/* Resetting */
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+
+/* Blocos */
+.container {
+	width: 967px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.container-full {
+	widows: 100%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+/* Header */
+.page-header {
+	padding: 22px 0px 28px;
+	.header-logo {
+		margin-left: 18px;
+		float: left;
+		a {
+			display: block;
+		}
+	}
+	.header-menu {
+		float: right;
+		width: 482px;
+		margin-right: 52px;
+		padding-top: 43px;
+		a {
+			font-family: 'Futura', sans-serif;
+			font-size: 14px;
+			text-transform: uppercase;
+			text-decoration: none;
+			color: #FFF;
+			background-color: #000;
+			display: inline-block;
+			width: 232px;
+			padding: 12px 0px;
+			float: left;
+			margin: 0px 9px 5px 0px;
+			text-align: center;
+			transition: .3s background-color, .5s box-shadow;
+			&:hover {
+				@include magic_hover(#F0BD00);
+				color: #000;
+				text-shadow: 0px 1px 0px rgba(0,0,0,.22);
+			}
+		}
+	}
+}
+
+/* Highlight */
+.page-highlight {
+	position: relative;
+	margin-bottom: 35px;
+	.highlight-list {
+		display: block;
+		li {
+			display: block;
+			height: 347px;
+		}
+	}
+}
+
+/* Products Container */
+.main-products-container {
+	margin-bottom: 76px;
+	.products-list {
+		display: block;
+		li {
+			display: block;
+			float: left;
+			width: 241px;
+			padding: 25px 0px 9px;
+			text-align: center;
+			transition: .2s background-color, .5s box-shadow;
+			.product-link {
+				display: block;
+				text-align: center;
+				text-decoration: none;
+				border-right: 1px solid #e7e7e7;
+			}
+			.product-item-thumbnail {
+				display: block;
+				margin: 0 auto 18px;
+			}
+			h3 {
+				text-align: center;
+				font-family: sans-serif;
+				font-size: 15px;
+				color: #181818;
+				padding: 0px 26px;
+				line-height: 1.5;
+				height: 51px;
+				margin: 5px 0px;
+			}
+			.price-tagging {
+				margin-top: 14px;
+				height: 58px;
+				margin-bottom: 6px;
+				.old-price {
+					font-size: 12px;
+					font-style: italic;
+					color: #717171;
+					text-decoration: line-through;
+					display: block;
+					margin: 0px;
+				}
+				.new-price {
+					font-size: 14px;
+					font-weight: 600;
+					color: #181818;
+					display: block;
+					margin: 0px 0px 4px;
+					em {
+						font-style: italic;
+					}
+				}
+				.forma-pagamento {
+					font-size: 14px;
+					font-style: italic;
+					color: #181818;
+					display: block;
+					em {
+						font-weight: 600;
+					}
+				}
+			}
+			.btn-comprar {
+				transition: .2s;
+				&:hover {
+					opacity: .9;
+					box-shadow: 0px 3px 2px rgba(0,0,0,.5);
+				}
+			}
+			.economia {
+				display: inline-block;
+				text-align: center;
+				width: 138px;
+				padding: 6px 0px;
+				margin: 10px 0px;
+				border: 1px solid #c5c5c5;
+				font-size: 11px;
+				font-family: 'Futura', sans-serif;
+				color: #181818;
+			}
+			&:hover {
+				@include magic_hover(#f3f3f3);
+			}
+			&:nth-child(4n + 4),
+			&:last-child {
+				.product-link {
+					border-right: none;
+				}
+			}
+		}
+	}
+}
+
+/* Footer */
+.page-footer {
+	background-image: url('../images/img-bg-footer.jpg');
+	padding: 55px 0px 64px;
+	.address-list {
+		display: block;
+		float: left;
+		margin-left: 56px;
+		.address-item {
+			float: left;
+			width: 228px;
+			margin-right: 31px;
+			position: relative;
+			.uf-arrow {
+				position: absolute;
+				top: 2px;
+				left: 0px;
+			}
+			.address-container {
+				padding: 10px 0px 0px 56px;
+				address {
+					font-family: 'Futura', sans-serif;
+					font-size: 13px;
+					font-style: normal;
+					color: #757676;
+					line-height: 1.5;
+				}
+				.tel {
+					font-size: 13px;
+					font-family: sans-serif;
+					font-weight: 600;
+					color: #000;
+					margin-top: 4px;
+					display: block;
+				}
+			}
+		}
+	}
+	.footer-links {
+		float: right;
+		width: 183px;
+		margin-right: 146px;
+		.footer-link-item {
+			position: relative;
+			width: 183px;
+			display: block;
+			height: 41px;
+			margin-bottom: 8px;
+			padding: 0px 0px 0px 44px;
+			background: #F0BD00;
+			background: linear-gradient(#ffca00, #e89a00);
+			font-family: 'Futura', sans-serif;
+			font-size: 12px;
+			letter-spacing: -.3px;
+			text-decoration: none;
+			text-transform: uppercase;
+			text-align: left;
+			color: #000;
+			transition: .4s;
+			strong {
+				font-weight: 700;
+			}
+			.footer-link-icon {
+				position: absolute;
+				&.icon-contato {
+					top: 9px;
+					left: 12px;
+				}
+				&.icon-consultor {
+					top: 10px;
+					left: 10px;
+				}
+			}
+			&.btn-contato {
+				padding-top: 14px;
+			}
+			&.btn-consultor {
+				padding-top: 7px;
+			}
+			&:hover {
+				background: #1D1D1D;
+				color: #FFF;
+				box-shadow: 0px 2px 2px rgba(0,0,0,.2);
+				.icon.icon-contato {
+					@include icon_profite(23px, 25px, -81px, -97px);
+				}
+				.icon.icon-consultor {
+					@include icon_profite(26px, 21px, -104px, -97px);
+				}
+			}
+		}
+	}
+}
+
+
+
+/* Icons */
+
+.icon {
+	display: inline-block;
+	background-image: url('../images/spritesheet.png');
+	background-repeat: no-repeat;
+	&.icon-brand {
+		@include icon_profite(256px, 97px, 0px, 0px);
+	}
+	&.icon-rating {
+		width: 104px;
+		height: 17px;
+		&.rating-0 {
+			@include icon_profite_rating(0px, -122px);
+		}
+		&.rating-1 {
+			@include icon_profite_rating(0px, -139px);
+		}
+		&.rating-2 {
+			@include icon_profite_rating(0px, -156px);
+		}
+		&.rating-3 {
+			@include icon_profite_rating(0px, -173px);
+		}
+		&.rating-4 {
+			@include icon_profite_rating(0px, -190px);
+		}
+		&.rating-5 {
+			@include icon_profite_rating(0px, -207px);
+		}
+	}
+	&.btn-comprar {
+		@include icon_profite(123px, 33px, -109px, -122px);
+	}
+	&.uf-arrow.uf-sp {
+		@include icon_profite(49px, 40px, -109px, -155px);
+	}
+	&.uf-arrow.uf-rj {
+		@include icon_profite(49px, 40px, -158px, -155px);
+	}
+	&.icon-contato {
+		@include icon_profite(23px, 25px, -32px, -97px);
+	}
+	&.icon-consultor {
+		@include icon_profite(26px, 21px, -55px, -97px);
+	}
+}
+
+/* Clearfix */
+.clearfix:before,
+.clearfix:after {content: " ";display: table;}
+.clearfix:after {clear: both;}
+.clearfix {
+    *zoom: 1;
+}

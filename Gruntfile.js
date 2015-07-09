@@ -36,11 +36,20 @@ module.exports = function(grunt) {
 			}
 		},
 
+		//Minificando JS
+		uglify : {
+			dist : {
+				files : {
+					'build/js/main.min.js' : ['src/js/app.js']
+				}
+			}
+		},
+
 		// Minificando imagens em build
 		imagemin : {
 			dist : {
 				options : {
-					optimizationLevel : 3,
+					optimizationLevel : 5,
 				},
 				files : [{
 					expand: true,
@@ -61,11 +70,18 @@ module.exports = function(grunt) {
 			}
 		}, 
 
-		// Observando Sass, imagens e arquivos alterados em raw-assets
+		// Observando Sass, JS, imagens e arquivos alterados em raw-assets
 		watch : {
 			css : {
 				files : 'src/sass/*.scss',
 				tasks : ['sass', 'autoprefixer'],
+				options : {
+					livereload : true
+				}
+			},
+			js : {
+				files : 'src/js/*.js',
+				tasks : ['uglify'],
 				options : {
 					livereload : true
 				}
@@ -84,11 +100,12 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-autoprefixer');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
-	grunt.registerTask('default', ['sass', 'autoprefixer', 'imagemin', 'copy']);
+	grunt.registerTask('default', ['sass', 'autoprefixer', 'uglify', 'imagemin', 'copy']);
 	grunt.registerTask('update', ['connect', 'watch']);
 
 }
