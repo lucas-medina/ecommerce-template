@@ -23,7 +23,7 @@
 
 /* Blocos */
 .container {
-  width: 967px;
+  max-width: 967px;
   margin-left: auto;
   margin-right: auto; }
 
@@ -73,7 +73,11 @@
     display: block; }
     .page-highlight .highlight-list li {
       display: block;
-      height: 347px; }
+      max-height: 347px; }
+      .page-highlight .highlight-list li img {
+        width: 100%;
+        max-width: 967px;
+        height: auto; }
 
 /* Products Container */
 .main-products-container {
@@ -146,9 +150,9 @@
         font-family: 'Futura', sans-serif;
         color: #181818; }
       .main-products-container .products-list li:hover {
-        background-color: #f3f3f3;
-        box-shadow: 0px 3px 0px #d9d9d9; }
-      .main-products-container .products-list li:nth-child(4n + 4) .product-link, .main-products-container .products-list li:last-child .product-link {
+        background: #f3f3f3;
+        box-shadow: 0px 3px 0px #D9D9D9, 0px 0px 3px rgba(0, 0, 0, 0.25); }
+      .main-products-container .products-list li:last-child .product-link {
         border-right: none; }
 
 /* Footer */
@@ -231,6 +235,116 @@
           height: 21px;
           background-position: -104px -97px; }
 
+@media (min-width: 901px) {
+  .main-products-container .products-list li:nth-child(4n + 4) a {
+    border-right: none; } }
+@media (max-width: 967px) {
+  /* Blocos */
+  .container {
+    padding-left: 15px;
+    padding-right: 15px; }
+
+  .page-highlight {
+    padding: 0;
+    margin-bottom: 20px; }
+
+  .main-products-container .products-list {
+    width: 860px;
+    margin: 0 auto 15px; }
+    .main-products-container .products-list li {
+      width: 215px; }
+
+  .page-footer .footer-links {
+    margin-right: 96px; }
+    .page-footer .footer-links .footer-link-item {
+      margin-bottom: 16px; } }
+@media (max-width: 900px) {
+  .page-header .header-menu {
+    margin-right: 34px; }
+
+  .main-products-container .products-list {
+    width: 720px; }
+    .main-products-container .products-list li {
+      width: 240px; }
+
+  .page-footer {
+    padding: 40px 0px 32px; }
+    .page-footer .address-list {
+      margin-left: 96px; }
+      .page-footer .address-list .address-item {
+        float: none;
+        margin-bottom: 20px; }
+    .page-footer .footer-links {
+      margin-top: 10px; }
+      .page-footer .footer-links .footer-link-item {
+        margin-bottom: 16px; } }
+@media (max-width: 840px) {
+  .page-header .header-logo {
+    margin-left: 32px; }
+  .page-header .header-menu {
+    padding-top: 20px;
+    width: auto; }
+    .page-header .header-menu a {
+      float: none;
+      display: block;
+      margin-bottom: 7px; }
+
+  .main-products-container .products-list {
+    width: 700px; }
+    .main-products-container .products-list li {
+      width: 233px; } }
+@media (min-width: 721px) and (max-width: 900px) {
+  .main-products-container .products-list li:nth-child(3n + 3) a {
+    border-right: none; } }
+@media (max-width: 720px) {
+  .page-header .header-logo {
+    margin-left: 24px; }
+
+  .main-products-container .products-list {
+    width: 440px; }
+    .main-products-container .products-list li {
+      width: 220px; }
+
+  .page-footer .address-list {
+    margin-left: 50px; }
+  .page-footer .footer-links {
+    margin-right: 50px; } }
+@media (max-width: 600px) {
+  .page-header .header-logo,
+  .page-header .header-menu {
+    float: none;
+    text-align: center;
+    margin: 0px 0px 12px; }
+    .page-header .header-logo a,
+    .page-header .header-menu a {
+      display: inline-block; }
+  .page-header .header-menu {
+    margin-bottom: 0px; }
+
+  .page-footer .address-list {
+    float: none;
+    margin: 0 auto 20px;
+    text-align: center; }
+    .page-footer .address-list .address-item {
+      display: inline-block;
+      margin: 10px; }
+  .page-footer .footer-links {
+    float: none;
+    margin: 0 auto; } }
+@media (min-width: 481px) and (max-width: 720px) {
+  .main-products-container .products-list li:nth-child(2n + 2) a {
+    border-right: none; } }
+@media (max-width: 480px) {
+  .main-products-container .products-list {
+    width: 240px; }
+    .main-products-container .products-list li {
+      width: 240px;
+      border-bottom: 1px solid #e7e7e7; }
+      .main-products-container .products-list li .product-link {
+        border-right: none; }
+
+  .page-footer {
+    padding: 20px 0px; } }
 /* Icons */
 .icon {
   display: inline-block;

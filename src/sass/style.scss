@@ -28,7 +28,7 @@
 
 /* Blocos */
 .container {
-	width: 967px;
+	max-width: 967px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -84,7 +84,12 @@
 		display: block;
 		li {
 			display: block;
-			height: 347px;
+			max-height: 347px;
+			img {
+				width: 100%;
+				max-width: 967px;
+				height: auto;
+			}
 		}
 	}
 }
@@ -172,9 +177,9 @@
 				color: #181818;
 			}
 			&:hover {
-				@include magic_hover(#f3f3f3);
+				background: #f3f3f3;
+				box-shadow: 0px 3px 0px #D9D9D9, 0px 0px 3px rgba(0,0,0,0.25);
 			}
-			&:nth-child(4n + 4),
 			&:last-child {
 				.product-link {
 					border-right: none;
@@ -278,7 +283,7 @@
 	}
 }
 
-
+@import 'media';
 
 /* Icons */
 
