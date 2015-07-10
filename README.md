@@ -14,7 +14,7 @@ As pastas são organizadas da seguinte forma:
 A responsividade do layout é feita com base na resolução da tela, e independe do dispositivo utilizado.
 
 ### Highlight
-O layout não foi implementando levando em consideração a possibilidade de slideshow, mas a imagem utilizada no mesmo também é responsiva, e recomenda-se o uso de imagens **967x347**.
+O layout não foi implementando levando em consideração a possibilidade de slideshow, mas a imagem utilizada no mesmo também é responsiva, e recomenda-se o uso de imagens com as dimensões **967x347**.
 
 ### Nota dos produtos
 A nota (quantidade de estrelas) que os produtos recebem está sendo validada de acordo com o valor (float) atribuído na própria tag *span* com a class '*.icon-rating*', arredondado:
